@@ -12,22 +12,23 @@ This dashboard gives an overview about the speedtest which is configured in iobr
 1. Grafana version >9.3.x
 2. InfluxDB version >2
 3. InfluxDB is correctly installed and working in iobroker
+4. Speedtest cli is installed on iobroker client --> [please find here official documentation](https://www.speedtest.net/apps/cli#ubuntu)
+5. [javascript is correctly installed and configured from here](https://www.kreyenborg.koeln/speedtest-fuer-iobroker/)
+
+Now:
+
+6. Enable the follwoing datapoints in iobroker for influxdb logging:
 a. the following ids / datapoints needed to be enabled in iobroker for InfluxDB2 logging:
 -- javascript.0.Speedtest.Ergebnisse.Download_MB
 -- javascript.0.Speedtest.Ergebnisse.Download_MBit
 -- javascript.0.Speedtest.Ergebnisse.Ping
 -- javascript.0.Speedtest.Ergebnisse.Upload_MB
 -- javascript.0.Speedtest.Ergebnisse.Upload_MBit
-4. Speedtest cli is installed on iobroker client --> [please find here official documentation](https://www.speedtest.net/apps/cli#ubuntu)
-5. [javascript is correctly installed and configured from here](https://www.kreyenborg.koeln/speedtest-fuer-iobroker/)
-
-Now:
-
-6. Influx database is configured in Grafana with FLUX !!!
-7. Load the speedtest.json from here
-8. Go into Grafana under DASHBOARDS / IMPORT and load via Upload JSON file
-9. Click LOAD and your dashboard should appear !
-10. Please select correct DATABASE and BUCKET --> values should appear !
+7. Influx database is configured in Grafana with FLUX !!!
+8. Load the speedtest.json from here
+9. Go into Grafana under DASHBOARDS / IMPORT and load via Upload JSON file
+10. Click LOAD and your dashboard should appear !
+11. Please select correct DATABASE and BUCKET --> values should appear !
 
 ## Changelog
 
