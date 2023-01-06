@@ -2,6 +2,7 @@
 
 please provide an issue
 
+![](speedtest.png)
 ## Description
 
 This dashboard gives an overview about the speedtest which is configured in iobroker. The preconditions please see below
