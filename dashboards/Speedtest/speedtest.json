@@ -730,7 +730,7 @@
             "type": "influxdb",
             "uid": "${Datasource}"
           },
-          "query": "import \"timezone\"\noption location = timezone.location(name: \"Europe/Berlin\")\n\nfrom(bucket: \"${Bucket}\")\n  |> range(start: -14d, stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"javascript.0.Speedtest.Ergebnisse.Download_MB\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> difference()\n  |> aggregateWindow(every: 1d, fn: count, timeSrc: \"_start\")\n",
+          "query": "import \"timezone\"\noption location = timezone.location(name: \"Europe/Berlin\")\n\nfrom(bucket: \"${Bucket}\")\n  |> range(start: -14d, stop: now())\n  |> filter(fn: (r) => r[\"_measurement\"] == \"javascript.0.Speedtest.Ergebnisse.Download_MB\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> aggregateWindow(every: 1d, fn: count, timeSrc: \"_start\")\n",
           "refId": "A"
         }
       ],
@@ -914,6 +914,6 @@
   "timezone": "",
   "title": "Speedtest",
   "uid": "VMr9HWhVz",
-  "version": 19,
+  "version": 20,
   "weekStart": ""
 }
