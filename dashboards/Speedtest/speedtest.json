@@ -806,7 +806,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Anzahl der Werte"
+                "value": "Durchschnittswert"
               }
             ]
           }
@@ -914,6 +914,6 @@
   "timezone": "",
   "title": "Speedtest",
   "uid": "VMr9HWhVz",
-  "version": 20,
+  "version": 21,
   "weekStart": ""
 }
