@@ -5,7 +5,7 @@ These are my dashboards which i want to share
 
 First Dashboard (06.01.2022):
 
-:one: :white_check_mark: [Grafana Dashboard for Speedtest from Javascript in IoBroker](https://github.com/Seqway/Anleitungen/tree/main/Howtos/01_UnifiVPN2CloudServer)<br>
+:one: :white_check_mark: [Grafana Dashboard for Speedtest from Javascript in IoBroker](https://github.com/Seqway/Grafana-Dashboards/tree/main/dashboards/Speedtest)<br>
 
 :two: :x: pending
 
