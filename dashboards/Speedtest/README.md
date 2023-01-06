@@ -17,10 +17,11 @@ This dashboard gives an overview about the speedtest which is configured in iobr
 
 Now:
 
-6. Load the speedtest.json from here
-7. Go into Grafana under DASHBOARDS / IMPORT and load via Upload JSON file
-8. Click LOAD and your dashboard should appear !
-9. Please select correct DATABASE and BUCKET --> values should appear !
+6. Influx database is configured in Grafana with FLUX !!!
+7. Load the speedtest.json from here
+8. Go into Grafana under DASHBOARDS / IMPORT and load via Upload JSON file
+9. Click LOAD and your dashboard should appear !
+10. Please select correct DATABASE and BUCKET --> values should appear !
 
 ## Changelog
 
