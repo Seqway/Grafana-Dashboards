@@ -32,4 +32,13 @@ a. the following ids / datapoints needed to be enabled in iobroker for InfluxDB2
 
 ## Changelog
 
+* 0.0.2 - dashboard updated (06.01.2023)
+
+-- changed to last instead of mean
+-- difference deleted()
+-- last measured time in dashboard added
+-- new graph added for average speed per day
+-- new curve added "jitter" in graph ping
+-- picture updated
+
 * 0.0.1 - first version (06.01.2023)
