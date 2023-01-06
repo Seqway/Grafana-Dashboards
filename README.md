@@ -3,7 +3,7 @@
 
 These are my dashboards which i want to share
 
-First Dashboard (06.01.2022):
+First Dashboard (06.01.2023):
 
 :one: :white_check_mark: [Grafana Dashboard for Speedtest from Javascript in IoBroker](https://github.com/Seqway/Grafana-Dashboards/tree/main/dashboards/Speedtest)<br>
 
@@ -16,7 +16,7 @@ Please provide your feedback here and submit Issues to improve the dashboards
 ## Changelog
 ### 0.0.1
 * (Seqway) official release
-    uploaded first dashboard :one: (06.01.2022)
+    uploaded first dashboard :one: (06.01.2023)
 
 ## Support me
 If you like my work, please consider a personal donation  
@@ -26,7 +26,7 @@ If you like my work, please consider a personal donation
 ## License
 MIT License
 
-Copyright (c) 2022 Seqway <dirkscheck@gmx.de>
+Copyright (c) 2023 Seqway <dirkscheck@gmx.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
