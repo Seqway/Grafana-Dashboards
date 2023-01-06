@@ -12,6 +12,12 @@ This dashboard gives an overview about the speedtest which is configured in iobr
 1. Grafana version >9.3.x
 2. InfluxDB version >2
 3. InfluxDB is correctly installed and working in iobroker
+a. the following ids / datapoints needed to be enabled in iobroker for InfluxDB2 logging:
+-- javascript.0.Speedtest.Ergebnisse.Download_MB
+-- javascript.0.Speedtest.Ergebnisse.Download_MBit
+-- javascript.0.Speedtest.Ergebnisse.Ping
+-- javascript.0.Speedtest.Ergebnisse.Upload_MB
+-- javascript.0.Speedtest.Ergebnisse.Upload_MBit
 4. Speedtest cli is installed on iobroker client --> [please find here official documentation](https://www.speedtest.net/apps/cli#ubuntu)
 5. [javascript is correctly installed and configured from here](https://www.kreyenborg.koeln/speedtest-fuer-iobroker/)
 
