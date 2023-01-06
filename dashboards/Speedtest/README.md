@@ -9,7 +9,7 @@ This dashboard gives an overview about the speedtest which is configured in iobr
 
 ## Installation / preconditions
 
-1. Grafana version >7
+1. Grafana version >9.3.x
 2. InfluxDB version >2
 3. InfluxDB is correctly installed and working in iobroker
 4. Speedtest cli is installed on iobroker client --> [please find here official documentation](https://www.speedtest.net/apps/cli#ubuntu)
