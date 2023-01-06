@@ -668,7 +668,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "value"
+              "options": "javascript.0.Speedtest.Ergebnisse.Ping value"
             },
             "properties": [
               {
@@ -1024,6 +1024,6 @@
   "timezone": "",
   "title": "Speedtest",
   "uid": "VMr9HWhVz",
-  "version": 23,
+  "version": 24,
   "weekStart": ""
 }
