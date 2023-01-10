@@ -1,0 +1,1266 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 36,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 120,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "green",
+                "value": 25
+              }
+            ]
+          },
+          "unit": "dateTimeAsLocal"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 16,
+        "x": 0,
+        "y": 0
+      },
+      "id": 18,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^Time$/",
+          "values": false
+        },
+        "text": {
+          "valueSize": 30
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Download_MB",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Download_MB\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Letzte Messung !",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 120,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "green",
+                "value": 25
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 0,
+        "y": 2
+      },
+      "id": 2,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Download_MB",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Download_MB\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "root_selector": "",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "source": "url",
+          "tags": [],
+          "type": "json",
+          "url": "https://jsonplaceholder.typicode.com/users",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        }
+      ],
+      "title": "Download in MB/s",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 7,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1.5
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 4,
+        "y": 2
+      },
+      "id": 3,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Upload_MB",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Upload_MB\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Upload in MB/s",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 1198,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red"
+              },
+              {
+                "color": "green",
+                "value": 250
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 8,
+        "y": 2
+      },
+      "id": 8,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Download_MBit",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "from(bucket: \"${Bucket}\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"javascript.0.Speedtest.Ergebnisse.Download_MBit\")\n  |> filter(fn: (r) => r[\"_field\"] == \"value\")\n  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)\n  |> yield(name: \"last\")",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Download in MBit/s",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 70,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 15
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 2
+      },
+      "id": 9,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Upload_MBit",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Upload_MBit\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Upload in MBit/s",
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 2,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Mbits"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Download"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "rgb(63, 255, 0)",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Upload"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "rgb(255, 0, 23)",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Webspeedy Download.mean"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "rgb(58, 255, 0)",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 8
+      },
+      "hideTimeOverride": true,
+      "id": 14,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "alias": "Download",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Download_MBit",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Download_MBit\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Upload",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Upload_MBit",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Upload_MBit\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": "2d",
+      "title": "Speedtest",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "decimals": 2,
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Download"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "rgb(63, 255, 0)",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Upload"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "rgb(255, 0, 23)",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Webspeedy Download.mean"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "rgb(58, 255, 0)",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 8
+      },
+      "hideTimeOverride": true,
+      "id": 16,
+      "options": {
+        "legend": {
+          "calcs": [
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "9.1.6",
+      "targets": [
+        {
+          "alias": "Ping",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Ping",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT last(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Ping\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": "2d",
+      "title": "Ping",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time:DD.MM."
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "value"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Anzahl der Werte"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 0,
+        "y": 15
+      },
+      "id": 12,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Time",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Download_MB",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT max(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Download_MB\" WHERE $timeFilter GROUP BY time(1d) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": "2w",
+      "title": "Anzahl Werte pro Tag",
+      "transformations": [],
+      "type": "barchart"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${Datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "fillOpacity": 80,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineWidth": 1,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "max": 1000,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "Mbits"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Time"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "time:DD.MM."
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "value"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Durchschnittswert"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 8,
+        "y": 15
+      },
+      "id": 20,
+      "options": {
+        "barRadius": 0,
+        "barWidth": 0.97,
+        "groupWidth": 0.7,
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "orientation": "auto",
+        "showValue": "auto",
+        "stacking": "none",
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        },
+        "xField": "Time",
+        "xTickLabelRotation": 0,
+        "xTickLabelSpacing": 0
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "alias": "Durchschnittsdownloadrate",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${Datasource}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "1d"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "javascript.0.Speedtest.Ergebnisse.Download_MBit",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT max(\"value\") FROM \"javascript.0.Speedtest.Ergebnisse.Download_MBit\" WHERE $timeFilter GROUP BY time(1d) fill(null)",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "max"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": "2w",
+      "title": "Durchschnittsdownloadrate in MBit/s",
+      "transformations": [],
+      "type": "barchart"
+    }
+  ],
+  "refresh": "15m",
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "InfluxDB-QL",
+          "value": "InfluxDB-QL"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "Datasource",
+        "options": [],
+        "query": "influxdb",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Speedtest QLv1",
+  "uid": "VMr9HWhVz",
+  "version": 31,
+  "weekStart": ""
+}
